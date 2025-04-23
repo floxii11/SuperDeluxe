@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SuperDeluxe</title>
+  <style>
+    :root {
+      --main-bg: #f4f4f9;
+      --text: #333;
+      --accent: #6e00ff;
+      --card: white;
+    }
+
+    body.dark {
+      --main-bg: #1a1a1a;
+      --text: #eee;
+      --accent: #ff6ec4;
+      --card: #2b2b2b;
+    }
+
+    body.hyper {
+      --main-bg: #000000;
+      --text: #39ff14;
+      --accent: #ff00ff;
+      --card: #1a1a1a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--main-bg);
+      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background 0.4s, color 0.4s;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--accent), #c200fb);
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: var(--card);
+      padding: 1rem 0;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(110, 0, 255, 0.1);
+    }
+
+    .controls {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    select {
+      margin: 0 1rem;
+      padding: 0.5rem;
+      border-radius: 10px;
+      border: 2px solid var(--accent);
+      background: var(--card);
+      color: var(--text);
+      font-weight: bold;
+    }
+
+    main {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    section {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: var(--card);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+
+    .hidden { display: none; }
+
+    .glow-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: bold;
+      text-shadow: 0 0 5px var(--accent);
+    }
+
+    .glow-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>SuperDeluxe</h1>
+  <p>Luxury pencils for chaotic energy. Founded in a dream. Built with delusion.</p>
+</header>
+
+<nav>
+  <a href="#home" onclick="showSection('home')">Home</a>
+  <a href="#faq" onclick="showSection('faq')">FAQ</a>
+  <a href="#hyper" onclick="showSection('hyper')">Hyper Deluxe</a>
+</nav>
+
+<div class="controls">
+  <label>Language:
+    <select onchange="alert('This doesn’t actually translate. But it feels international.')">
+      <option>English</option>
+      <option>Slovene</option>
+      <option>Русский</option>
+      <option>日本語</option>
+      <option>Deutsch</option>
+    </select>
+  </label>
+
+  <label>Theme:
+    <select onchange="changeTheme(this.value)">
+      <option value="default">Default</option>
+      <option value="dark">Dark Mode</option>
+      <option value="hyper">Hyper Deluxe™</option>
+    </select>
+  </label>
+</div>
+
+<main>
+  <section id="home">
+    <h2>Welcome to SuperDeluxe</h2>
+    <p>Founded by Oliver M and Matic ŠT, two rogue creatives who once sharpened pencils with sword techniques.</p>
+    <p>Our goal? To charge more for less... but prettier.</p>
+    <p>Headquartered in an undisclosed mountain base. Legal documents? 🤔 Sure.</p>
+    <p style="margin-top: 1.5rem;">
+      <a class="glow-link" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Visit Our Legal Document Archive 📜</a>
+    </p>
+  </section>
+
+  <section id="faq" class="hidden">
+    <h2>FAQ</h2>
+    <p><strong>Q: Are your pencils real?</strong><br>
+    A: We are *emotionally* real.</p>
+    <p><strong>Q: Can I trust you?</strong><br>
+    A: Do you trust vibes? That’s what matters.</p>
+    <p><strong>Q: Do you even have rights?</strong><br>
+    A: We link to documents. That counts now.</p>
+  </section>
+
+  <section id="hyper" class="hidden">
+    <h2>Hyper Deluxe™</h2>
+    <p>Born from the ashes of lesser pencils. Infused with mystery. Costs more than a Netflix subscription.</p>
+    <p>"It’s trash, but like... expensive trash." – Matic ŠT</p>
+    <p>"You could draw with it. Or frame it. Either way, you’re winning." – Oliver M</p>
+  </section>
+</main>
+
+<footer>
+  <p>All Rights Not Reserved 2025 · SuperDeluxe™ & Hyper Deluxe™ — We copyright vibes, not laws. <br>
+  Visit our <a class="glow-link" href="https://example.com/fake-legal-documents.pdf" target="_blank">Legal Archive</a> if you're feeling litigious.</p>
+</footer>
+
+<script>
+  function showSection(id) {
+    ['home', 'faq', 'hyper'].forEach(sec => {
+      document.getElementById(sec).classList.add('hidden');
+    });
+    document.getElementById(id).classList.remove('hidden');
+  }
+
+  function changeTheme(mode) {
+    document.body.className = mode === 'default' ? '' : mode;
+  }
+</script>
+
+</body>
+</html>
